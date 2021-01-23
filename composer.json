@@ -1,0 +1,9 @@
+{
+    "name": "some/name",
+    "description": "Some description will be useful too!",
+    
+    "require": {
+        "doctrine/dbal": "3.0.*",
+        "symfony/console": "^5.2"
+    }
+    }
