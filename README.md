@@ -2,7 +2,7 @@ AUTHOR:
     Luke Fordham
 
 INITIALISE ENVIRONMENT:
-    - create folder to contain 'application.php file and 'composer.json' file'.
+    - create folder to contain 'application.php file, 'composer.json' file' and 'composer.lock' file.
     - run composer in root directory of created folder and run 'composer install' in terminal to install required packages.
 
 APPLICATION INFO:
