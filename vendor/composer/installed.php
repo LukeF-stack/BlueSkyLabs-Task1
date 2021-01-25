@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8f08def1e2f3cd239092d933715054721a02e58a',
+    'reference' => '5b168dc91a44e468601e0d8a217fb7a3c81ffcd7',
     'name' => 'some/name',
   ),
   'versions' => 
@@ -77,7 +77,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8f08def1e2f3cd239092d933715054721a02e58a',
+      'reference' => '5b168dc91a44e468601e0d8a217fb7a3c81ffcd7',
     ),
     'symfony/console' => 
     array (
