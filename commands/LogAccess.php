@@ -1,6 +1,7 @@
 <?php 
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Doctrine\DBAL\Exception;
@@ -24,9 +25,18 @@ class LogAccess extends Command
             if ($conn->connect()) { 
                 $output->writeln("Connection Successful \n"); 
 
-                $conn->insert('entries', array('accessed' => date("D M d, Y G:i")));
+                $helper = $this->getHelper('question');
 
-                $output->writeln("Data Logged \n"); 
+                $question = new Question("Enter name to log in database \n >", "guest");
+
+
+                $enteredName = $helper->ask($input, $output, $question);
+
+                $time = date('c');
+
+                $conn->insert('entries', $logdata = array('user' => $enteredName, 'time' => $time));
+
+                $output->writeln("Data Logged: \n user: $enteredName \n time: $time"); 
 
                 return Command::SUCCESS;
             } else {
@@ -35,7 +45,7 @@ class LogAccess extends Command
             } 
         } catch (Exception $e) 
         {
-            $output->writeln("Connection Unsuccessful \n"); 
+            $output->writeln($e); 
             return Command::FAILURE;
         }
     } 

@@ -27,7 +27,7 @@ class ReadData extends Command
                 $sql = "SELECT * FROM entries";
                 $stmt = $conn->query($sql);
                 while (($result = $stmt->fetch()) !==false) {
-                        print "accessed db at {$result['accessed']} \n";
+                        print "{$result['user']} accessed database at {$result['time']} \n";
                 }
 
                 return Command::SUCCESS;
